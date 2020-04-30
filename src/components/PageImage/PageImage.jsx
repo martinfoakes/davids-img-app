@@ -10,6 +10,7 @@ const PageImage = () => {
     "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
   );
   const [name, setName] = useState("Rick");
+  const [species, setSpecies] = useState("Human");
 
   const apiCall = (e) => {
     // Stop Page reloads
@@ -20,6 +21,7 @@ const PageImage = () => {
       .then((result) => {
         setUrl(result.image);
         setName(result.name);
+        setSpecies(result.species);
         console.log(result);
       });
   };
@@ -30,7 +32,8 @@ const PageImage = () => {
         <input type="text" id="image-name" />
       </FormCont>
       <img src={url} alt="Rick and Morty Character" />
-      <p>{name}</p>
+      <p>{`Name: ${name}`}</p>
+      <p>{`Species: ${species}`}</p>
     </>
   );
 };
