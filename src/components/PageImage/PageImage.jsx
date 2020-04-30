@@ -17,6 +17,9 @@ const PageImage = () => {
     // Stop Page reloads
     e.preventDefault();
     e.stopPropagation();
+    if (e.target[0].value === "") {
+      return;
+    }
     fetch(`https://rickandmortyapi.com/api/character/${e.target[0].value}`)
       .then((res) => res.json())
       .then((result) => {
