@@ -47,7 +47,7 @@ const PageImage = () => {
           <p>{`Species: ${species}`}</p>
         </>
       )}
-      {error && <p>{error}</p>}
+      {error && <p>{`${error}: Try Again`}</p>}
     </>
   );
 };
